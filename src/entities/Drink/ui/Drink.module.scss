@@ -1,0 +1,73 @@
+.drink {
+  min-width: 340px;
+  max-width: 340px;
+  padding: 20px;
+  box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+}
+.modalTitle,
+.title {
+  color: var(--title-color);
+  font-size: clamp(0.875rem, 0.7164rem + 0.5929vw, 1.25rem);
+  margin-bottom: 10px;
+}
+.bju {
+  margin-bottom: clamp(1.25rem, 1.435rem + -0.6917vw, 0.8125rem);
+  font-size: clamp(0.75rem, 0.6707rem + 0.2964vw, 0.9375rem);
+  color: var(--gray-3);
+  font-weight: 359;
+}
+.composition {
+  padding: 10px 25px;
+  background-color: rgba(116, 255, 74, 0.4);
+  border-radius: 69px;
+  font-size: clamp(0.875rem, 0.8221rem + 0.1976vw, 1rem);
+  color: var(--black-bd);
+}
+
+.modal {
+  padding: 59px 63px 40px 84px;
+  background-color: white;
+  max-width: 602px;
+  color: var(--gray-3);
+  font-weight: 350;
+  font-size: clamp(0.875rem, 0.8486rem + 0.0988vw, 0.9375rem);
+  .modalDesc {
+    margin-bottom: 12px;
+    max-width: 325px;
+  }
+  .modalTitle {
+    max-width: 280px;
+  }
+  .modalComposition {
+    height: 141px;
+    max-height: 141px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .modalBjuButtons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    .modalBjuButton {
+      padding: 10px 25px;
+      background-color: rgba(116, 255, 74, 0.4);
+      border-radius: 69px;
+      color: var(--black-bd);
+      border-radius: 69ox;
+      font-size: clamp(0.75rem, 0.6443rem + 0.3953vw, 1rem);
+      font-weight: 400;
+      &.choosed {
+        background-color: var(--green-01);
+      }
+    }
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    height: min-content;
+  }
+}

@@ -40,8 +40,8 @@ export default function RootLayout({
         <div className={styles.wrapper}>
           <div className="__container">
             <Header />
-            {children}
           </div>
+          {children}
         </div>
       </body>
     </html>

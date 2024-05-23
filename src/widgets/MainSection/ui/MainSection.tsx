@@ -1,5 +1,5 @@
-import Image from "next/image";
 import styles from "./MainSection.module.scss";
+import { Container } from "@/shared/ui/Container";
 const achievements = [
   {
     n: 35,
@@ -16,11 +16,12 @@ const achievements = [
   {
     n: 300000,
     text: "проданных напитков в месяц",
+    long: true,
   },
 ];
 export const MainSection = () => {
   return (
-    <div className={styles.sectionContainer}>
+    <Container className={styles.sectionContainer}>
       <section className={styles.section}>
         <h1 className={styles.title}>
           Мы международная
@@ -32,14 +33,14 @@ export const MainSection = () => {
           тысяч гостей
         </p>
         <ul className={styles.achievements}>
-          {achievements.map(({ n, text }) => (
-            <li className={styles.achievement} key={text}>
+          {achievements.map(({ n, text, long }) => (
+            <li className={styles.achievement} key={text} data-long={long}>
               <span className={styles.number}>{n}</span>
               <span className={styles.text}>{text}</span>
             </li>
           ))}
         </ul>
       </section>
-    </div>
+    </Container>
   );
 };

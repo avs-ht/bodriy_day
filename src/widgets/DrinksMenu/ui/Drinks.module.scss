@@ -1,0 +1,14 @@
+.drinks {
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 100vw;
+  gap: clamp(1.1875rem, 0.8967rem + 1.087vw, 1.875rem);
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.listController {
+  right: 120px;
+  margin-top: -80px;
+}

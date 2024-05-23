@@ -1,5 +1,7 @@
 .sectionContainer {
   padding-top: clamp(3.125rem, 1.8034rem + 4.9407vw, 6.25rem);
+  padding-bottom: clamp(3.25rem, -0.6621rem + 14.6245vw, 12.5rem);
+
   position: relative;
   &::after {
     content: "";
@@ -13,20 +15,29 @@
     @media (max-width: 945px) {
       background: url("/images/cupOfCoffeeRotated.png") no-repeat center right;
       background-position-y: 85%;
-      z-index: -1;
+    }
+    @media (max-width: 400px) {
+      transform: translateX(20%);
     }
   }
 }
 .section {
   max-width: 60%;
+  @media (max-width: 945px) {
+    max-width: 100%;
+  }
   .title {
     font-size: clamp(2rem, 1.7885rem + 0.7905vw, 2.5rem);
+    color: var(--title-color);
     margin-bottom: clamp(0.6875rem, 0.5025rem + 0.6917vw, 1.125rem);
   }
   .description {
     font-size: clamp(1.1875rem, 1.1611rem + 0.0988vw, 1.25rem);
     margin-bottom: clamp(1.9375rem, 1.356rem + 2.1739vw, 3.3125rem);
     font-weight: 350;
+    @media (max-width: 945px) {
+      max-width: 85%;
+    }
   }
   .achievements {
     display: flex;
@@ -47,6 +58,19 @@
         width: min-content;
         max-width: 190px;
       }
+      @media (max-width: 945px) {
+        &[data-long="true"] {
+          flex-direction: column;
+          align-items: flex-start;
+          .text {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+    @media (max-width: 945px) {
+      gap: 27px;
+      max-width: 60%;
     }
   }
 }

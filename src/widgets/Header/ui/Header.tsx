@@ -25,7 +25,7 @@ export const Header = () => {
       ) : (
         <>
           {isMobileMenuOpen && (
-            <div className={styles.mobileMenuContainer}>
+            <div className={styles.mobileMenuContainer} data-no-scroll>
               <div className={styles.mobileMenu}>
                 <Nav />
                 <Socials />
