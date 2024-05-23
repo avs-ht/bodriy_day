@@ -1,3 +1,9 @@
+import MainSection from "@/widgets/MainSection";
+
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <MainSection />
+    </>
+  );
 }

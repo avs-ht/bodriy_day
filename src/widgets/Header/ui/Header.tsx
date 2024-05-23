@@ -1,60 +1,50 @@
+"use client";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import { LogoIcon } from "./icons/Logo";
-import { TelegramIcon } from "./icons/Telegram";
-import { WhatsAppIcon } from "./icons/Whatsapp";
 
-const links = [
-  {
-    label: "меню",
-    link: "",
-  },
-  {
-    label: "адрес кофеен",
-    link: "",
-  },
-  {
-    label: "маркеты",
-    link: "",
-  },
-  {
-    label: "франшиза",
-    link: "",
-  },
-  {
-    label: "вакансии",
-    link: "",
-  },
-  {
-    label: "контакты",
-    link: "",
-  },
-];
+import { useMediaQuery } from "@uidotdev/usehooks";
+import { Nav } from "./Nav";
+import { Socials } from "./Socials";
+import { useState } from "react";
+import clsx from "clsx";
+
 export const Header = () => {
+  const isMobileMenuHidden = useMediaQuery("(max-width: 945px)");
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className={styles.header}>
-      <Link href="/">
+      <Link href="/" className={styles.logo}>
         <LogoIcon />
       </Link>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          {links.map(({ label, link }) => {
-            return (
-              <li key={label} className={styles.item}>
-                <Link href={link}>{label}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <div className={styles.socials}>
-        <Link target="_blank" href="">
-          <TelegramIcon />
-        </Link>
-        <Link target="_blank" href="">
-          <WhatsAppIcon />
-        </Link>
-      </div>
+      {!isMobileMenuHidden ? (
+        <>
+          <Nav />
+          <Socials />
+        </>
+      ) : (
+        <>
+          {isMobileMenuOpen && (
+            <div className={styles.mobileMenuContainer}>
+              <div className={styles.mobileMenu}>
+                <Nav />
+                <Socials />
+              </div>
+            </div>
+          )}
+          <button
+            className={clsx(
+              styles.burgerButton,
+              isMobileMenuOpen && styles.active
+            )}
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
+          </button>
+        </>
+      )}
     </header>
   );
 };

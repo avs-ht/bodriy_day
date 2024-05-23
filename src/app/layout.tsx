@@ -1,7 +1,9 @@
+import styles from "./layout.module.scss";
 import type { Metadata } from "next";
 import "./_styles/index.scss";
 import localFont from "next/font/local";
 import Header from "@/widgets/Header";
+import Head from "next/head";
 const Stolzl = localFont({
   src: [
     {
@@ -28,10 +30,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+      </Head>
       <body className={Stolzl.className}>
-        <div className="__container">
-          <Header />
-          {children}
+        <div className={styles.wrapper}>
+          <div className="__container">
+            <Header />
+            {children}
+          </div>
         </div>
       </body>
     </html>

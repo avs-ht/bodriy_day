@@ -1,26 +1,117 @@
 .header {
-  padding-block: 51px;
+  padding-block: clamp(2.188rem, 1.7663rem + 1.5763vw, 3.185rem);
   display: flex;
   align-items: center;
-  gap: 50px;
-  .nav {
-    flex-grow: 1;
-
-    .list {
-      width: 100%;
-      display: flex;
-      gap: 53px;
-      align-items: center;
-      justify-content: flex-end;
-      .item {
-        text-transform: lowercase;
-      }
+  gap: clamp(2.188rem, 1.7663rem + 1.5763vw, 3.185rem);
+  @media (max-width: 945px) {
+    justify-content: space-between;
+  }
+  .logo {
+    @media (max-width: 767px) {
+      transform: scale(0.8);
     }
   }
 
-  .socials {
+  .burgerButton {
+    z-index: 9999;
+    width: 32px;
+    height: 20px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s;
+    cursor: pointer;
+    span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--black-bd);
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s;
+      &:first-child {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 8.5px;
+      }
+      &:last-child {
+        bottom: 0;
+      }
+    }
+    &.active {
+      span:first-child {
+        top: 8.5px;
+        transform: rotate(135deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+      span:last-child {
+        top: 8.5px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}
+
+.nav {
+  flex-grow: 1;
+
+  .list {
+    width: 100%;
     display: flex;
+    gap: clamp(0.625rem, -0.5169rem + 4.2688vw, 3.325rem);
     align-items: center;
-    gap: 29px;
+    justify-content: flex-end;
+    .item {
+      font-size: 15px;
+      text-transform: lowercase;
+      white-space: nowrap;
+      @media (max-width: 945px) {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 945px) {
+      flex-direction: column;
+      align-items: flex-end;
+
+      gap: 40px;
+    }
+  }
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  @media (max-width: 945px) {
+    flex-direction: column;
+    gap: 31px;
+    align-items: flex-end;
+  }
+}
+.mobileMenuContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--backdrop);
+
+  display: flex;
+  justify-content: flex-end;
+  .mobileMenu {
+    padding-top: 140px;
+    background: white url("./effects/greenEllipse.png") no-repeat bottom right;
+    padding-bottom: 78px;
+    padding-right: var(--inline-padding-container);
+    height: 100%;
+    min-width: 322px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 76px;
   }
 }
