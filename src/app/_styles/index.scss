@@ -1,0 +1,19 @@
+@import "null.scss";
+@import "vars.scss";
+
+body {
+  background-color: var(--bodyColor);
+  color: var(--textColor);
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+[class*="__container"] {
+  max-width: calc(var(--width-container) + var(--inline-padding-container) * 2);
+  margin: 0 auto;
+  padding: 0 var(--inline-padding-container);
+}

@@ -1,0 +1,26 @@
+.header {
+  padding-block: 51px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  .nav {
+    flex-grow: 1;
+
+    .list {
+      width: 100%;
+      display: flex;
+      gap: 53px;
+      align-items: center;
+      justify-content: flex-end;
+      .item {
+        text-transform: lowercase;
+      }
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+  }
+}
