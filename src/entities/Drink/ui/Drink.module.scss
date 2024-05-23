@@ -1,6 +1,7 @@
 .drink {
-  min-width: 340px;
-  max-width: 340px;
+  --width: clamp(18.125rem, 17.0677rem + 3.9526vw, 20.625rem);
+  min-width: var(--width);
+  max-width: var(--width);
   padding: 20px;
   box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.08);
   border-radius: 15px;
@@ -69,5 +70,22 @@
     right: 30px;
     cursor: pointer;
     height: min-content;
+  }
+}
+
+.backdrop {
+  @media (max-width: 768px) {
+    align-items: flex-end !important;
+    padding: 0 !important;
+    .modal {
+      padding: 50px 34px;
+      max-width: 100% !important;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      .close {
+        top: 20px;
+        right: 20px;
+      }
+    }
   }
 }

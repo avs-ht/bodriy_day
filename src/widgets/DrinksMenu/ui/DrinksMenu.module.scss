@@ -1,3 +1,6 @@
+.section {
+  margin-bottom: clamp(3.125rem, 1.8034rem + 4.9407vw, 6.25rem);
+}
 .title {
   font-size: clamp(1.4375rem, 0.9881rem + 1.6798vw, 2.5rem);
   color: var(--title-color);

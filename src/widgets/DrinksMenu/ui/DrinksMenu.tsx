@@ -27,27 +27,29 @@ const drinksCategories = [
 export const DrinksMenu = () => {
   const [category, setCategory] = useState("classic");
   return (
-    <Container>
-      <h2 className={styles.title}>Меню напитков</h2>
-      <p className={styles.description}>ознакомиться с составами и кбжу</p>
+    <section className={styles.section}>
+      <Container>
+        <h2 className={styles.title}>Меню напитков</h2>
+        <p className={styles.description}>ознакомиться с составами и кбжу</p>
 
-      <ul className={styles.categories}>
-        {drinksCategories.map(({ label, value }) => (
-          <li key={value}>
-            <button
-              type="button"
-              className={clsx(
-                styles.categoryButton,
-                value === category && styles.active
-              )}
-              onClick={() => setCategory(value)}
-            >
-              {label}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <Drinks category={category} />
-    </Container>
+        <ul className={styles.categories}>
+          {drinksCategories.map(({ label, value }) => (
+            <li key={value}>
+              <button
+                type="button"
+                className={clsx(
+                  styles.categoryButton,
+                  value === category && styles.active
+                )}
+                onClick={() => setCategory(value)}
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <Drinks category={category} />
+      </Container>
+    </section>
   );
 };

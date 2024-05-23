@@ -26,6 +26,7 @@ export const Drink = ({ drink }: { drink: IDrink }) => {
       <Modal
         visible={isModalOpen}
         modalClassName={styles.modal}
+        bgClassName={styles.backdrop}
         onClose={() => setModalOpen(false)}
       >
         <h3 className={styles.modalTitle}>{title}</h3>

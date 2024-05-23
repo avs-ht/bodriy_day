@@ -1,4 +1,8 @@
 .listController {
+  z-index: 2;
+  @media (max-width: 945px) {
+    display: none;
+  }
   position: absolute;
   display: flex;
   gap: 42px;

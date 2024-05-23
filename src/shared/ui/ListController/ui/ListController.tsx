@@ -1,12 +1,17 @@
 import clsx from "clsx";
-import { RefObject } from "react";
+import { RefObject, useEffect, useState } from "react";
 import styles from "./ListController.module.scss";
 import { ArrowIcon } from "./ArrowIcon";
 interface Props {
   listRef: RefObject<HTMLUListElement | null>;
   className?: string;
+  isArrowsVisible?: boolean;
 }
-export const ListController = ({ listRef, className }: Props) => {
+export const ListController = ({
+  listRef,
+  className,
+  isArrowsVisible = true,
+}: Props) => {
   const scrollRight = () => {
     if (!listRef.current) return;
     const elementW = listRef.current.children[0].clientWidth;
@@ -20,6 +25,7 @@ export const ListController = ({ listRef, className }: Props) => {
     listRef.current.scrollBy({ left: -(elementW + gap), behavior: "smooth" });
   };
 
+  if (!isArrowsVisible) return null;
   return (
     <div className={clsx(styles.listController, className)}>
       <button className={styles.button} onClick={scrollLeft}>

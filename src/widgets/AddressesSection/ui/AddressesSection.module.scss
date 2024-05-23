@@ -1,0 +1,17 @@
+.section {
+  color: var(--title-color);
+  position: relative;
+}
+
+.title {
+  font-size: clamp(1.4375rem, 0.9881rem + 1.6798vw, 2.5rem);
+  max-width: 1000px;
+  margin-bottom: clamp(0.9375rem, 0.7789rem + 0.5929vw, 1.3125rem);
+}
+.button {
+  display: inline-block;
+  padding: 10px 30px !important;
+  border-radius: 70px !important;
+  background-color: rgba(116, 255, 74, 0.38) !important;
+  margin-bottom: clamp(1.875rem, 1.267rem + 2.2727vw, 3.3125rem) !important;
+}

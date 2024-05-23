@@ -224,10 +224,14 @@ export const Drinks = ({ category }: Props) => {
   const listRef = useRef<HTMLUListElement>(null);
   return (
     <>
-      <ListController listRef={listRef} className={styles.listController} />
+      <ListController
+        listRef={listRef}
+        className={styles.listController}
+        isArrowsVisible={!!drinks[category]?.length}
+      />
       <ul className={styles.drinks} ref={listRef}>
-        {drinks[category]?.map((drink) => (
-          <li key={drink.title} className={styles.drink}>
+        {drinks[category]?.map((drink, i) => (
+          <li key={i} className={styles.drink}>
             <Drink drink={drink} />
           </li>
         ))}
