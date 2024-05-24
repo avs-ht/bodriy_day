@@ -1,0 +1,16 @@
+.section {
+  padding-top: clamp(3.125rem, 1.8034rem + 4.9407vw, 6.25rem);
+}
+.container {
+  position: relative;
+}
+.title {
+  color: var(--title-color);
+  font-size: clamp(1.4375rem, 0.9881rem + 1.6798vw, 2.5rem);
+  margin-bottom: 10px;
+}
+.description {
+  color: var(--black-bd);
+  font-size: clamp(0.875rem, 0.7164rem + 0.5929vw, 1.25rem);
+  margin-bottom: clamp(1.875rem, 1.3463rem + 1.9763vw, 3.125rem);
+}

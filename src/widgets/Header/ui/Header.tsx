@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import { LogoIcon } from "./icons/Logo";
 
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useMediaQuery } from "@/shared/hooks/useMediaQuery";
 import { Nav } from "./Nav";
 import { Socials } from "./Socials";
 import { useState } from "react";
