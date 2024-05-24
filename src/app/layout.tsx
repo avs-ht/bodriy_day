@@ -4,6 +4,7 @@ import "./_styles/index.scss";
 import localFont from "next/font/local";
 import Header from "@/widgets/Header";
 import Head from "next/head";
+import Footer from "@/widgets/Footer";
 const Stolzl = localFont({
   src: [
     {
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Header />
           </div>
           {children}
+          <Footer />
         </div>
       </body>
     </html>

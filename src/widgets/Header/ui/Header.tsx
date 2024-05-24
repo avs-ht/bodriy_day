@@ -1,7 +1,7 @@
 "use client";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import { LogoIcon } from "./icons/Logo";
+import { LogoIcon } from "@/shared/ui/Logo";
 
 import { useMediaQuery } from "@/shared/hooks/useMediaQuery";
 import { Nav } from "./Nav";

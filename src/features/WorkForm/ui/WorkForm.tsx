@@ -7,6 +7,21 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { WorkRequest, workSchema } from "../model/formSchema";
 import { transformToPhone } from "../lib/transformToPhone";
+
+const jobOptions = [
+  {
+    label: "Бухгалтер",
+    value: "accountant",
+  },
+  {
+    label: "Менеджер",
+    value: "manager",
+  },
+  {
+    label: "Консультант",
+    value: "consultant",
+  },
+];
 export const WorkForm = () => {
   const {
     handleSubmit,
@@ -15,10 +30,13 @@ export const WorkForm = () => {
     formState: { errors, isSubmitting, isDirty, isValid },
   } = useForm<WorkRequest>({
     resolver: zodResolver(workSchema),
+    defaultValues: {
+      job: "accountant",
+    },
   });
 
   const onSubmit = (data: WorkRequest) => {
-    console.log(1);
+    console.log(data);
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +53,7 @@ export const WorkForm = () => {
           error={errors.city?.message}
           placeholder="город"
         />
-        <Select />
+        <Select control={control} options={jobOptions} name="job" />
         <Input
           register={register("name", {
             required: {
@@ -52,7 +70,6 @@ export const WorkForm = () => {
           render={({ field: { onChange, onBlur, value, ref, name } }) => {
             return (
               <Input
-                defaultValue={"7("}
                 value={value}
                 onChange={(e) => {
                   onChange(transformToPhone(e.target.value));
