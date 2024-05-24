@@ -13,6 +13,13 @@
     border-color: #ccc;
   }
   caret-color: #ccc;
+  &.inverse {
+    background-color: transparent;
+    color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
 }
 .error {
   line-height: 150%;

@@ -1,3 +1,4 @@
+"use client";
 import styles from "./AskForm.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -19,7 +20,12 @@ export const AskForm = () => {
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-      <Input register={register("name")} error={errors.name?.message} inverse />
+      <Input
+        register={register("name")}
+        error={errors.name?.message}
+        inverse
+        placeholder="Ваше имя"
+      />
       <PhoneInput
         inverse
         control={control}
