@@ -1,0 +1,19 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding-block: clamp(3.75rem, 2.6927rem + 3.9526vw, 6.25rem);
+}
+.container {
+  display: flex;
+  border-radius: 50px;
+  > * {
+    flex: 1;
+  }
+  .imageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+}

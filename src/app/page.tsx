@@ -4,6 +4,8 @@ import DrinksMenu from "@/widgets/DrinksMenu";
 import MainSection from "@/widgets/MainSection";
 import MarketsSection from "@/widgets/MarketsSection";
 import BlogSection from "@/widgets/BlogSection";
+import NewPartnersSection from "@/widgets/NewPartnersSection";
+import WorkSection from "@/widgets/WorkSection";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <AddressesSection />
       <MarketsSection />
       <BlogSection />
+      <NewPartnersSection />
+      <WorkSection />
     </>
   );
 }

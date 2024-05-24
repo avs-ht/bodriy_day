@@ -5,11 +5,13 @@ import { IPost } from "@/widgets/BlogSection/model/post";
 import Image from "next/image";
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useMediaQuery } from "@/shared/hooks/useMediaQuery";
 
 export const Post = ({ post }: { post: IPost }) => {
   const { duration, desc, base64url, link } = post;
   const descRef = useRef<HTMLParagraphElement>(null);
   const [isShowMore, setShowMore] = useState(true);
+
   useLayoutEffect(() => {
     if (!descRef.current || isShowMore) return;
     setShowMore(isOverflowed(descRef.current));
@@ -27,7 +29,8 @@ export const Post = ({ post }: { post: IPost }) => {
         />
         {!!duration && (
           <span className={styles.duration}>
-            {Math.floor(duration / 60)}:{duration % 60}
+            {Math.floor(duration / 60)}:
+            {(duration % 60).toString().padStart(2, "0")}
           </span>
         )}
       </div>

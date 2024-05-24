@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { RefObject, useEffect, useState } from "react";
+import { RefObject, useLayoutEffect } from "react";
 import styles from "./ListController.module.scss";
 import { ArrowIcon } from "./ArrowIcon";
 interface Props {
@@ -14,14 +14,17 @@ export const ListController = ({
 }: Props) => {
   const scrollRight = () => {
     if (!listRef.current) return;
+
     const elementW = listRef.current.children[0].clientWidth;
     const gap = parseInt(getComputedStyle(listRef.current).gap);
-    listRef.current.scrollBy({ left: elementW + gap, behavior: "smooth" });
+    const scroll = elementW + gap;
+    listRef.current.scrollBy({ left: scroll, behavior: "smooth" });
   };
   const scrollLeft = () => {
     if (!listRef.current) return;
     const elementW = listRef.current.children[0].clientWidth;
     const gap = parseInt(getComputedStyle(listRef.current).gap);
+    const scroll = elementW + gap;
     listRef.current.scrollBy({ left: -(elementW + gap), behavior: "smooth" });
   };
 

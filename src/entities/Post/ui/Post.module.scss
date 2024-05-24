@@ -3,12 +3,18 @@
   box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.08);
   border-radius: 21px;
   padding: 30px 25px;
-  max-width: 618px;
+  min-width: clamp(17.4375rem, -9.0469rem + 84.75vw, 38.625rem);
+  max-width: clamp(17.4375rem, -9.0469rem + 84.75vw, 38.625rem);
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
+  @media (max-width: 900px) {
+    grid-template-columns: auto;
+    max-width: 279px;
+    min-width: 279px;
+  }
   .imgContainer {
-    width: var(--content-height);
+    max-width: var(--content-height);
     max-height: var(--content-height);
     height: auto;
     aspect-ratio: 1 / 1;
@@ -39,6 +45,9 @@
     flex-direction: column;
     max-height: var(--content-height);
     overflow: hidden;
+    @media (max-height: 900px) {
+      max-height: 528px;
+    }
   }
   .showMore {
     color: var(--title-color);

@@ -1,6 +1,7 @@
 .list {
   display: flex;
   gap: clamp(1.25rem, 0.9857rem + 0.9881vw, 1.875rem);
+  padding-right: clamp(1.25rem, 0.9857rem + 0.9881vw, 1.875rem);
   overflow: auto;
   min-width: 100vw;
   &::-webkit-scrollbar {

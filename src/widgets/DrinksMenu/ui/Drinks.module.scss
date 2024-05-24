@@ -3,6 +3,8 @@
   flex-wrap: nowrap;
   min-width: 100vw;
   gap: clamp(1.1875rem, 0.8967rem + 1.087vw, 1.875rem);
+  padding-left: 15px;
+  padding-right: 30px;
   padding-block: 10px;
   overflow: auto;
   &::-webkit-scrollbar {
