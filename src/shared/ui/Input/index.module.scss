@@ -1,0 +1,35 @@
+.input {
+  width: 100%;
+  padding: 16px 43px 16px 21px;
+  background-color: white;
+  line-height: 150%;
+  border: 2px solid white;
+  color: var(--black-bd);
+  border-radius: 30px;
+  &::placeholder {
+    color: var(--black-bd);
+  }
+  &:focus {
+    border-color: #ccc;
+  }
+  caret-color: #ccc;
+}
+.error {
+  line-height: 150%;
+  color: var(--negative);
+  font-weight: 350;
+  font-size: 13px;
+}
+
+.inputContainer {
+  position: relative;
+  &:has(+ .error) .input {
+    border-color: var(--negative);
+  }
+}
+.errorIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 23px;
+}

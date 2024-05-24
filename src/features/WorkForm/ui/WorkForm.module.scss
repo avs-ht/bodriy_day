@@ -16,3 +16,11 @@
   color: #a5a5a5;
   white-space: nowrap;
 }
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-bottom: 34px;
+}
