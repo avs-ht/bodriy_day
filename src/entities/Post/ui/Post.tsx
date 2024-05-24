@@ -13,6 +13,7 @@ export const Post = ({ post }: { post: IPost }) => {
   useLayoutEffect(() => {
     if (!descRef.current || isShowMore) return;
     setShowMore(isOverflowed(descRef.current));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className={styles.post}>
