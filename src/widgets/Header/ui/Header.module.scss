@@ -73,6 +73,10 @@
       @media (max-width: 945px) {
         font-size: 16px;
       }
+      transition: 0.3s;
+      &:hover {
+        color: var(--green-bd);
+      }
     }
     @media (max-width: 945px) {
       flex-direction: column;
@@ -90,6 +94,16 @@
     flex-direction: column;
     gap: 31px;
     align-items: flex-end;
+  }
+  > * {
+    svg path {
+      transition: 0.3s;
+    }
+    &:hover {
+      svg path {
+        fill: var(--green-bd);
+      }
+    }
   }
 }
 .mobileMenuContainer {

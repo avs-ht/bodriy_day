@@ -29,14 +29,18 @@ export const Button = ({
         className={bClass}
         style={style}
       >
-        {children}
-        {rightIcon && rightIcon}
+        <span>
+          {children}
+          {rightIcon && rightIcon}
+        </span>
       </Link>
     );
 
   return (
     <button className={bClass} {...props} style={style}>
-      {children} {rightIcon && rightIcon}
+      <span>
+        {children} {rightIcon && rightIcon}
+      </span>
     </button>
   );
 };

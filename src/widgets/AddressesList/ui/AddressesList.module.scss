@@ -27,4 +27,12 @@
   padding-block: 10px;
   overflow: hidden;
   white-space: nowrap;
+  a {
+    &:visited {
+      cursor: default;
+      color: var(--green-bd);
+      text-decoration: underline;
+      text-decoration-color: var(--green-bd);
+    }
+  }
 }

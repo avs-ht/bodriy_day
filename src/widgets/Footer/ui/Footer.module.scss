@@ -11,6 +11,7 @@
       margin-bottom: 25px;
       .left {
         flex-grow: 1;
+        margin-bottom: 10px;
         .questionTitle {
           font-size: clamp(1.4375rem, 0.9881rem + 1.6798vw, 2.5rem);
           color: white;
@@ -23,9 +24,6 @@
           opacity: 0.57;
           font-size: clamp(1.4375rem, 1.1996rem + 0.8893vw, 2rem);
         }
-      }
-
-      .askForm {
       }
     }
 
@@ -62,6 +60,11 @@
 
               font-size: 12px;
               line-height: 140%;
+
+              transition: 0.3s;
+              &:hover {
+                color: var(--green-bd);
+              }
             }
           }
         }
@@ -128,6 +131,14 @@
             justify-content: center;
             svg {
               transform: scale(0.6);
+              path {
+                transition: 0.3s;
+              }
+            }
+            &:hover {
+              svg path {
+                fill: var(--green-bd);
+              }
             }
           }
         }

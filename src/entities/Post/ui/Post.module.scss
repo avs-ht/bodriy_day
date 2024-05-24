@@ -53,5 +53,11 @@
     color: var(--title-color);
     text-decoration: underline;
     font-size: clamp(0.875rem, 0.8221rem + 0.1976vw, 1rem);
+    &:visited {
+      cursor: default;
+      color: var(--green-bd);
+      text-decoration: underline;
+      text-decoration-color: var(--green-bd);
+    }
   }
 }

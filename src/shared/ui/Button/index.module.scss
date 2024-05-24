@@ -2,7 +2,7 @@
   width: 100% !important;
   color: var(--black-bd) !important;
   font-size: clamp(0.875rem, 0.8221rem + 0.1976vw, 1rem) !important;
-  background-color: #01ff0b !important;
+
   padding: 19.5px 30px !important;
   border-radius: 50px !important;
   display: flex !important;
@@ -11,4 +11,31 @@
   gap: 8px !important;
   cursor: pointer !important;
   height: min-content !important;
+  transition: 0.3s !important;
+  position: relative;
+  background: #01ff0b !important;
+  > span {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    opacity: 0;
+    transition: 0.3s;
+    background: var(--green-gradient) !important;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
 }

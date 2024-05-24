@@ -14,6 +14,7 @@ export const AskForm = () => {
     formState: { errors },
   } = useForm<askRequest>({
     resolver: zodResolver(askSchema),
+    defaultValues: {},
   });
   const onSubmit = (data: askRequest) => {
     console.log(data);

@@ -14,4 +14,8 @@
   border-radius: 70px !important;
   background-color: rgba(116, 255, 74, 0.38) !important;
   margin-bottom: clamp(1.875rem, 1.267rem + 2.2727vw, 3.3125rem) !important;
+  transition: 0.3s;
+  &:hover {
+    background-color: var(--green-01) !important;
+  }
 }
