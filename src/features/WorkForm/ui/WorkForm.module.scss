@@ -4,6 +4,20 @@
   padding-right: 145px;
   padding-top: 37px;
   padding-bottom: 48px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  @media (max-width: 858px) {
+    width: 100%;
+    padding-right: 50px;
+  }
+  @media (max-width: 680px) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-bottom: 70px;
+  }
+  @media (max-width: 375px) {
+    padding-inline: 10px;
+  }
 }
 .title {
   font-size: clamp(1.4375rem, 0.9881rem + 1.6798vw, 2.5rem);
