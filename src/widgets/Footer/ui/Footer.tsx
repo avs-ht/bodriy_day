@@ -29,7 +29,7 @@ const links = [
     href: "",
   },
   {
-    label: "Меню + кбжу",
+    label: "Контакты",
     href: "",
   },
 ];
@@ -93,6 +93,11 @@ export const Footer = () => {
               style={{
                 maxWidth: 237,
               }}
+              linkBehaviour={{
+                href: "/",
+                target: "_blank",
+              }}
+              className={styles.buttonFran}
             >
               франшиза
             </Button>
