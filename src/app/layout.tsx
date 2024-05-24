@@ -33,10 +33,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={Stolzl.className}>
         <div className={styles.wrapper}>
-          <div className="__container">
-            <Header />
+          <div className={styles.background}>
+            <div className="__container">
+              <Header />
+            </div>
+            {children}
           </div>
-          {children}
+
           <Footer />
         </div>
       </body>

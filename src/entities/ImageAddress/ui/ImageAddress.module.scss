@@ -4,6 +4,7 @@
     width: clamp(15.375rem, 13.6304rem + 6.5217vw, 19.5rem);
     height: auto;
     aspect-ratio: 1 / 1;
+    border-radius: 23px;
   }
   .address {
     background-color: var(--backdrop);

@@ -3,3 +3,22 @@
   max-width: 100%;
   overflow: hidden;
 }
+
+.background {
+  min-height: 100vh;
+  background-image: url("/effects/yellow.png"), url("/effects/green.png"),
+    url("/effects/green.png"), url("/effects/green1.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: left -275px top, right -350px top, left -375px top 1350px,
+    right top 650px;
+  z-index: -1;
+  position: relative;
+  @media (max-width: 945px) {
+    background-position: left -475px top 100px, right -350px top -300px,
+      left top -9999px, right top -9999px; //2
+  }
+  @media (max-width: 680px) {
+    background-position: left -475px top 100px, right -350px top -100px,
+      left top -9999px, right top -9999px; // 1, 2
+  }
+}
