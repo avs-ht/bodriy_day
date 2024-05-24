@@ -1,10 +1,6 @@
 import z from "zod";
 
-export const workSchema = z.object({
-  city: z.string().min(1, {
-    message: "Укажите ваш город",
-  }),
-  job: z.string(),
+export const askSchema = z.object({
   name: z.string().min(1, {
     message: "Укажите ваше имя",
   }),
@@ -16,4 +12,4 @@ export const workSchema = z.object({
   ),
 });
 
-export type WorkRequest = z.infer<typeof workSchema>;
+export type askRequest = z.infer<typeof askSchema>;

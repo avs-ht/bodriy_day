@@ -4,9 +4,9 @@ import styles from "./WorkForm.module.scss";
 import Input from "@/shared/ui/Input";
 import { Select } from "@/shared/ui/Select";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { WorkRequest, workSchema } from "../model/formSchema";
-import { transformToPhone } from "../lib/transformToPhone";
+import { PhoneInput } from "@/shared/ui/PhoneInput";
 
 const jobOptions = [
   {
@@ -27,6 +27,9 @@ export const WorkForm = () => {
     handleSubmit,
     register,
     control,
+    clearErrors,
+    setError,
+
     formState: { errors, isSubmitting, isDirty, isValid },
   } = useForm<WorkRequest>({
     resolver: zodResolver(workSchema),
@@ -55,39 +58,17 @@ export const WorkForm = () => {
         />
         <Select control={control} options={jobOptions} name="job" />
         <Input
-          register={register("name", {
-            required: {
-              value: true,
-              message: "Укажите ваше имя",
-            },
-          })}
+          register={register("name")}
           error={errors.name?.message}
           placeholder="ваше имя"
         />
-        <Controller
+        <PhoneInput
           control={control}
           name="phone"
-          render={({ field: { onChange, onBlur, value, ref, name } }) => {
-            return (
-              <Input
-                value={value}
-                onChange={(e) => {
-                  onChange(transformToPhone(e.target.value));
-                }}
-                onBlur={onBlur}
-                ref={ref}
-                name={name}
-                error={errors.phone?.message}
-              />
-            );
-          }}
+          error={errors.phone?.message}
         />
       </div>
-      <Button
-        rightIcon={<></>}
-        type="submit"
-        disabled={!isDirty || !isValid || isSubmitting}
-      >
+      <Button rightIcon={<></>} type="submit">
         отправить
       </Button>
     </form>
