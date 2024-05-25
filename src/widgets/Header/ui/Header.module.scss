@@ -15,7 +15,7 @@
   .burgerButton {
     z-index: 9999;
     width: 32px;
-    height: 20px;
+    height: 21px;
     position: relative;
     transform: rotate(0deg);
     transition: 0.5s;
@@ -28,35 +28,64 @@
       background-color: var(--black-bd);
       opacity: 1;
       left: 0;
-      transform: rotate(0deg);
+
       transition: 0.25s;
       &:first-child {
         top: 0px;
       }
       &:nth-child(2) {
-        top: 8.5px;
+        top: 9px;
+      }
+      &:nth-child(3) {
+        top: 9px;
+        opacity: 0;
       }
       &:last-child {
-        bottom: 0;
+        top: 18px;
       }
     }
     &.active {
       span:first-child {
-        top: 8.5px;
-        transform: rotate(135deg);
-      }
-      span:nth-child(2) {
+        top: 9px;
         opacity: 0;
-        left: -60px;
       }
+
       span:last-child {
-        top: 8.5px;
-        transform: rotate(-135deg);
+        top: 9px;
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        opacity: 1;
+        animation: rotate1 0.1s linear forwards;
+        animation-delay: 0.1s;
+      }
+
+      span:nth-child(2) {
+        animation: rotate 0.1s linear forwards;
+        animation-delay: 0.1s;
       }
     }
   }
 }
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
 
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
 .nav {
   flex-grow: 1;
 

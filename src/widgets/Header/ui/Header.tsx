@@ -42,6 +42,7 @@ export const Header = () => {
             <span className={styles.burgerLine}></span>
             <span className={styles.burgerLine}></span>
             <span className={styles.burgerLine}></span>
+            <span className={styles.burgerLine}></span>
           </button>
         </>
       )}
